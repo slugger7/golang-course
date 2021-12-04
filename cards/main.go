@@ -1,13 +1,10 @@
 package main
 
 func main() {
-	cards := deck{"Ace of Diamonds", newCard()}
+	cards := newDeck()
 
-	cards = append(cards, "Six of Spades")
+	hand, remainingDeck := deal(cards, 5)
 
-	cards.print()
-}
-
-func newCard() string {
-	return "Five of Diamonds"
+	hand.print()
+	remainingDeck.print()
 }
